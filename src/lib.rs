@@ -15,6 +15,10 @@
 // Please review the Licences for the specific language governing permissions and limitations
 // relating to use of the SAFE Network Software.
 
+/// A very simple ScoketAddr structure that is serialisable and makes use of the `ip` crate.
+/// There is no intent here to provide many more traits (perhaps serde).
+/// Deref is implemented to allow easy access to the underlying `net::ScoketAddr`
+
 extern crate rustc_serialize;
 extern crate ip;
 

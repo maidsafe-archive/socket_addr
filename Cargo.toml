@@ -1,10 +1,10 @@
 [package]
 authors = ["MaidSafe Developers <dev@maidsafe.net>"]
 description = "Serialisable SocketAddri that is IpAddr friendly (use ip crate until it's back in std, hopefully)"
-documentation = "http://maidsafe.net/crust/latest"
+documentation = "http://maidsafe.net/socket_addr/latest"
 homepage = "http://maidsafe.net"
 license = "GPL-3.0"
-name = "crust"
+name = "socket_addr"
 readme = "README.md"
 repository = "https://github.com/maidsafe/socket_addr"
 version = "0.0.1"

@@ -1,23 +1,25 @@
 env:
   global:
-    - secure: 
+  - secure: AEFefIM2yOcHN/nfb2RLewREATkH3kj6lw2Gs628T2+zfpJSbXwRQSMTZ8mQoHtuWyushH8p9GwH6OM2u2cs7Jx+iHZXAa7Di75cJHys3dJo3PzPPsFK1iFiWZ2SFrlXWADewfR6wzycI3mhNbuWSx9fr65KNlL3MBAKgtIJodKcj/vKEQD+jW4sIETon78Xin3xCugOa4gyIV+TaYDySYHAFZTQCw1h1BaVRlMssDjXtVgzfMGLhJqxKYf2OTXtmHXtcQh2qUuzTZfUqJ3cPvuOKK6xrl4FcVIj+xTOr6T7rfMmdqdlMkn0bcrrUHIglbs0wEsZz4i9JYYE0R7NRHmx0gRJ/F/qJhbCm8SrJv8HATy0+axe3/LnnR8yGG/hy+e63hoFO8u8TItuX3x9/v4TC/Nj68DaOBbNECyJKtWfvO6B1nL07U6sSl6zfiYZmIb8pFQmUQeXkDQ+EwfCDJGgx0hwAf18brg1Zmnp9nizSBT+rBHfuAe3VuBkyai38nABBVPJ9bx92R60iibDaXMhVltiFJZlLceJPF2Okia8UnlivLU040UFcohPEK1Ihm/StdAVowxOXnVp0GpvxVTCRBExX9ttOW753QU3NDeCCOpy7x5gYnHmOqyxRUEGwgW33XX6F9nmDN40Lw7bZ7jsEGWgNXE6AbuwieEElkI=
 os:
-  - linux
-  - osx
+- linux
+- osx
 language: rust
 rust:
-  - stable
+- stable
 sudo: false
 branches:
   only:
-    - master
+  - master
 cache:
   directories:
-    - $HOME/elfutils
+  - "$HOME/elfutils"
 script:
-  - curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/build_and_run_tests.sh | bash
+- curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/build_and_run_tests.sh
+  | bash
 before_cache:
-  - curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/install_elfutils.sh
-  - . install_elfutils.sh
+- curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/install_elfutils.sh
+- ". install_elfutils.sh"
 after_success:
-  - curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/after_success.sh | bash
+- curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/after_success.sh
+  | bash

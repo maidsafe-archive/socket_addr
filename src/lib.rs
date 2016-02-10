@@ -15,9 +15,32 @@
 // Please review the Licences for the specific language governing permissions and limitations
 // relating to use of the SAFE Network Software.
 
-/// A very simple ScoketAddr structure that is serialisable and makes use of the `ip` crate.
-/// There is no intent here to provide many more traits (perhaps serde).
-/// Deref is implemented to allow easy access to the underlying `net::ScoketAddr`
+//! A very simple ScoketAddr structure that is serialisable and makes use of the `ip` crate.
+//! There is no intent here to provide many more traits (perhaps serde).
+//! Deref is implemented to allow easy access to the underlying `net::ScoketAddr`
+
+#![doc(html_logo_url =
+           "https://raw.githubusercontent.com/maidsafe/QA/master/Images/maidsafe_logo.png",
+       html_favicon_url = "http://maidsafe.net/img/favicon.ico",
+       html_root_url = "http://maidsafe.github.io/secure_serialisation")]
+
+// For explanation of lint checks, run `rustc -W help` or see
+// https://github.com/maidsafe/QA/blob/master/Documentation/Rust%20Lint%20Checks.md
+#![forbid(bad_style, exceeding_bitshifts, mutable_transmutes, no_mangle_const_items,
+          unknown_crate_types, warnings)]
+#![deny(deprecated, drop_with_repr_extern, improper_ctypes, missing_docs,
+        non_shorthand_field_patterns, overflowing_literals, plugin_as_library,
+        private_no_mangle_fns, private_no_mangle_statics, stable_features, unconditional_recursion,
+        unknown_lints, unsafe_code, unused, unused_allocation, unused_attributes,
+        unused_comparisons, unused_features, unused_parens, while_true)]
+#![warn(trivial_casts, trivial_numeric_casts, unused_extern_crates, unused_import_braces,
+        unused_qualifications, unused_results)]
+#![allow(box_pointers, fat_ptr_transmutes, missing_copy_implementations,
+         missing_debug_implementations, variant_size_differences)]
+
+#![cfg_attr(feature="clippy", feature(plugin))]
+#![cfg_attr(feature="clippy", plugin(clippy))]
+#![cfg_attr(feature="clippy", deny(clippy, clippy_pedantic))]
 
 extern crate rustc_serialize;
 extern crate ip;

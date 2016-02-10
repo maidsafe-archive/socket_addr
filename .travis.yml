@@ -2,11 +2,12 @@ env:
   global:
   - secure: j6NMo9+QHVR9LG4Sec6jq9ruE1p9+cND+8B7jIy8jMxKqKN/dqXju/4CYZZVTccbFa1t/U80kRU1QTz3x+r34jFT0RKfTfqMW7xixxiNjoly73BeSVwJIfLQCJVyPjVZr+2YaasnmXuS3A3X0JdEFfeNCHD8z5sIj5Mrfl/pkCxaGB+Xo4bAesKhANGgmVtn6N5mMDnT6ExepGCj8UyRNry4xyCR0qEm7m69iv7H1JqJryKsKkNrhp41Rq4cfGmRiemjroOna4HmgJxdZpGKgpsqOZ5cDlRQrLxCX47MMEDpGui1nYqDBpf8RgoQYsTvy2PoxmI/cygseJsIwBrdlTQJixyO2mLCax3pIS2BnwDcWKOC9Djw5hKKsYL9V2ofBPJbzg6VSx/3+82arbpg1RLNCVkzFzx0XwsoVx3c54w/i8WRVdO76Lztlxsso7pTaFOPznbkdbMPy8fd9YQ7cAVqKOdV8Bj0j4WhWqEqg1/uxYSlueB/iEQjViU7bGciTH5KKhywOxBJMiyfs7BgIHR2QRCNkkY1RISe9K8FV27V3FxwQDHyXotDeqoEuFlehELjE/42VvG2VMUeyVlgV6M4HMQJSpyMDO4hg4zJPRE8VNSt0D+qIGoVgNNXb9j5IcxSD18Vk3RiYj0QvmTrDqUn2k+B4Mrb6SAnCzmCQqk=
 os:
-- linux
-- osx
+  - linux
+  - osx
 language: rust
 rust:
-- stable
+  - stable
+  - nightly
 sudo: false
 branches:
   only:

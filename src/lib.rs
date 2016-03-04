@@ -15,7 +15,7 @@
 // Please review the Licences for the specific language governing permissions and limitations
 // relating to use of the SAFE Network Software.
 
-//! A very simple ScoketAddr structure that is serialisable and makes use of the `ip` crate.
+//! A very simple wrapper around std::net::SocketAddr that is serialisable.
 //! There is no intent here to provide many more traits (perhaps serde).
 //! Deref is implemented to allow easy access to the underlying `net::ScoketAddr`
 
@@ -44,14 +44,12 @@
 #![cfg_attr(feature="clippy", allow(use_debug))]
 
 extern crate rustc_serialize;
-extern crate ip;
 
 use std::net;
 use std::ops::Deref;
 use std::str::FromStr;
 use std::fmt;
 use rustc_serialize::{Encodable, Decodable, Encoder, Decoder};
-use ip::{IpAddr, SocketAddrExt};
 
 #[derive(Copy, Clone, Debug, Hash, Eq, PartialEq)]
 /// Wrapper around `std::net::SocketAddr` to enable it to encoded and decoded.
@@ -92,9 +90,9 @@ impl Decodable for SocketAddr {
 }
 
 impl SocketAddr {
-    /// Construct new from ip::IpAddr and port
-    pub fn new(ip: IpAddr, port: u16) -> Self {
-        SocketAddr(<net::SocketAddr as SocketAddrExt>::new(ip, port))
+    /// Construct new from IpAddr and port
+    pub fn new(ip: net::IpAddr, port: u16) -> Self {
+        SocketAddr(net::SocketAddr::new(ip, port))
     }
 }
 

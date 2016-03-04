@@ -1,6 +1,6 @@
 [package]
 authors = ["MaidSafe Developers <dev@maidsafe.net>"]
-description = "Serialisable SocketAddr that is IpAddr friendly (use ip crate until it's back in std, hopefully)"
+description = "Serialisable SocketAddr"
 documentation = "http://maidsafe.net/socket_addr/latest"
 homepage = "http://maidsafe.net"
 license = "GPL-3.0"
@@ -11,5 +11,4 @@ version = "0.0.2"
 
 [dependencies]
 clippy = {version = "~0.0.44", optional = true}
-ip = "~1.1.0"
 rustc-serialize = "~0.3.18"

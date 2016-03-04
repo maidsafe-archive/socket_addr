@@ -1,6 +1,6 @@
 [package]
 authors = ["MaidSafe Developers <dev@maidsafe.net>"]
-description = "Serialisable SocketAddr that is IpAddr friendly (use ip crate until it's back in std, hopefully)"
+description = "Serialisable SocketAddr"
 documentation = "http://maidsafe.net/socket_addr/latest"
 homepage = "http://maidsafe.net"
 license = "GPL-3.0"

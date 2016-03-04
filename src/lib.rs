@@ -15,9 +15,9 @@
 // Please review the Licences for the specific language governing permissions and limitations
 // relating to use of the SAFE Network Software.
 
-//! A very simple ScoketAddr structure that is serialisable and makes use of the `ip` crate.
+//! A serialisable `SocketAddr` wrapper.
 //! There is no intent here to provide many more traits (perhaps serde).
-//! Deref is implemented to allow easy access to the underlying `net::ScoketAddr`
+//! `Deref` is implemented to allow easy access to the underlying `net::SocketAddr`
 
 #![doc(html_logo_url =
            "https://raw.githubusercontent.com/maidsafe/QA/master/Images/maidsafe_logo.png",
@@ -46,14 +46,13 @@
 extern crate rustc_serialize;
 
 use std::net;
-use std::net::IpAddr;
 use std::ops::Deref;
 use std::str::FromStr;
 use std::fmt;
 use rustc_serialize::{Encodable, Decodable, Encoder, Decoder};
 
 #[derive(Copy, Clone, Debug, Hash, Eq, PartialEq)]
-/// Wrapper around `std::net::SocketAddr` to enable it to encoded and decoded.
+/// Wrapper around `std::net::SocketAddr` to enable it to be encoded and decoded.
 pub struct SocketAddr(pub net::SocketAddr);
 
 impl Deref for SocketAddr {
@@ -91,13 +90,13 @@ impl Decodable for SocketAddr {
 }
 
 impl SocketAddr {
-    /// Construct new from ip::IpAddr and port
-    pub fn new(ip: IpAddr, port: u16) -> Self {
+    /// Construct new from `IpAddr` and port.
+    pub fn new(ip: net::IpAddr, port: u16) -> Self {
         SocketAddr(net::SocketAddr::new(ip, port))
     }
 }
 
-/// Utility struct of SocketAddrV4 for hole punching
+/// Utility struct of `SocketAddrV4` for hole punching
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
 pub struct SocketAddrV4(pub net::SocketAddrV4);
 
